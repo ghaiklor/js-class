@@ -6,7 +6,7 @@
     } else if (typeof exports === 'object') {
         module.exports = factory();
     } else {
-        root.Class= factory();
+        root.Class = factory();
     }
 
 }(this, function () {

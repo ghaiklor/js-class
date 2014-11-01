@@ -1,0 +1,26 @@
+{
+  "name": "js-class",
+  "version": "1.0.0",
+  "description": "Create classes with prototype object, static properties and mixins in JavaScript",
+  "main": "src/Class.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node_modules/mocha-phantomjs/bin/mocha-phantomjs tests.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ghaiklor/js-class.git"
+  },
+  "author": "Eugene Obrezkov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghaiklor/js-class/issues"
+  },
+  "homepage": "https://github.com/ghaiklor/js-class",
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "mocha-phantomjs": "^3.5.1"
+  }
+}
