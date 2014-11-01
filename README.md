@@ -1,12 +1,30 @@
-JSClass
+JSKlass
 ========
 
 *Create classes with prototype object, static properties and mixins in JavaScript.*
 
+Installing from npm
+---
+
+```shell
+npm install jsklass
+```
+
+Using in NodeJS
+
+```javascript
+var Class = require('jsklass');
+
+var Basic = Class.create();
+var Extended = Basic.extend();
+```
+
 Download JSClass
 ---
 
-You can get latest version of JSClass [here](https://github.com/ghaiklor/js-class/blob/master/src/Class.js).
+If you want use it in browser then you need download source file.
+
+You can get latest version of JSKlass [here](https://github.com/ghaiklor/jsklass/blob/master/src/Class.js).
 
 Getting started
 ---
