@@ -6,11 +6,11 @@
     } else if (typeof exports === 'object') {
         module.exports = factory();
     } else {
-        root.YourModule = factory();
+        root.Class= factory();
     }
 
 }(this, function () {
-    'use strict';
+    "use strict";
 
     /**
      * Copy properties from parent to target object
@@ -19,14 +19,14 @@
      * @param  {Object} parent Parent object
      * @private
      */
-    function copyProperties(source, target, parent) {
+    function copy(source, target, parent) {
         Object.keys(source).forEach(function (key) {
             if (
-                typeof source[key] == "function" &&
-                typeof parent[key] == "function" &&
+                typeof source[key] === "function" &&
+                typeof parent[key] === "function" &&
                 /\b_super\b/.test(source[key])
             ) {
-                target[key] = wrapMethod(source[key], parent[key]);
+                target[key] = wrap(source[key], parent[key]);
             } else {
                 target[key] = source[key];
             }
@@ -41,7 +41,7 @@
      * @return {Function}              Returns wrapped function
      * @private
      */
-    function wrapMethod(method, parentMethod) {
+    function wrap(method, parentMethod) {
         return function () {
             var backup = this._super;
             this._super = parentMethod;
@@ -64,15 +64,15 @@
     /**
      * Create new Class or extend exists
      * @static
-     * @param {Object} [prototype] Prototype object for new Class
-     * @param {Object} [staticProperties] Object with static properties for new Class
-     * @param {Array}  [mixins] Array of mixins which need to inject in new Class prototype
-     * @return {Object} Returns new Class
+     * @param  {Object} [prototype]        Prototype object for new Class
+     * @param  {Object} [staticProperties] Object with static properties for new Class
+     * @param  {Array}  [mixins]           Array of mixins which need to inject in new Class prototype
+     * @return {Object}                    Returns new Class
      *
      * @example
-     * Rise.Class.create([prototype])
-     * Rise.Class.create([prototype], [staticProperties])
-     * Rise.Class.create([prototype], [staticProperties], [mixins])
+     * Class.create(prototype)
+     * Class.create(prototype, staticProperties)
+     * Class.create(prototype, staticProperties, [mixins])
      */
     Class.create = function (prototype, staticProperties, mixins) {
         prototype = prototype || {};
@@ -87,12 +87,14 @@
         Constructor.prototype.constructor = Constructor;
         Constructor.extend = Class.create;
 
-        copyProperties(staticProperties, Constructor, this);
-        copyProperties(prototype, Constructor.prototype, this.prototype);
+        copy(staticProperties, Constructor, this);
+        copy(prototype, Constructor.prototype, this.prototype);
         for (var i = mixins.length - 1; i >= 0; i--) {
-            copyProperties(mixins[i], Constructor.prototype, this.prototype);
+            copy(mixins[i], Constructor.prototype, this.prototype);
         }
 
         return Constructor;
     };
+
+    return Class;
 }));
