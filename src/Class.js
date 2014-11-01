@@ -8,7 +8,6 @@
     } else {
         root.Class = factory();
     }
-
 }(this, function () {
     "use strict";
 

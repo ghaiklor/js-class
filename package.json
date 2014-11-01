@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/ghaiklor/js-class",
   "devDependencies": {
-    "chai": "^1.9.2",
-    "mocha-phantomjs": "^3.5.1"
+    "chai": "latest",
+    "mocha-phantomjs": "latest"
   }
 }
