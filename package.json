@@ -3,6 +3,14 @@
   "version": "1.0.1",
   "description": "Create classes with prototype, static attributes, mixins in JavaScript and extend them",
   "main": "src/Class.js",
+  "keywords": [
+    "klass",
+    "class",
+    "extend",
+    "javascript",
+    "nodejs",
+    "node js"
+  ],
   "directories": {
     "test": "tests"
   },
