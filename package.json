@@ -1,6 +1,6 @@
 {
   "name": "jsklass",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Create classes with prototype, static attributes, mixins in JavaScript and extend them",
   "main": "src/Class.js",
   "keywords": [
