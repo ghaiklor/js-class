@@ -1,6 +1,8 @@
 JSKlass
 ========
 
+[![Build Status](https://travis-ci.org/ghaiklor/jsklass.svg?branch=master)](https://travis-ci.org/ghaiklor/jsklass)
+
 *Create classes with prototype object, static properties and mixins in JavaScript.*
 
 Installing from npm
@@ -43,7 +45,7 @@ var Animal = Class.create({
     init: function() {
         this.type = "Animal";
     },
-    
+
     getType: function() {
         return this.type;
     }
@@ -95,7 +97,7 @@ var BasicClass = Class.create({
     init: function() {
         this.foo = "bar";
     },
-    
+
     getType: function() {
         return this.type;
     }
@@ -103,7 +105,7 @@ var BasicClass = Class.create({
 
 var ExtendedClass = BasicClass.extend({
     type: "ExtendedClass",
-    
+
     init: function() {
         this._super();
         this.bar = "foo";
@@ -154,11 +156,11 @@ var EventEmitterMixin = {
     on: function() {
         return "on";
     },
-    
+
     off: function() {
         return "off";
     },
-    
+
     emit: function() {
         return "emit";
     }
