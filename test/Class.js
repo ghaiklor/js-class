@@ -4,6 +4,7 @@ var assert = require('assert'),
 describe('Class', function () {
     it('Should create basic class', function () {
         var Test = Class.create();
+
         assert.equal(typeof Test, 'function', 'Should be a function');
         assert(new Test() instanceof Test, 'Should be an instance of Test');
     });
@@ -27,9 +28,9 @@ describe('Class', function () {
             }
         }]);
 
-        assert.equal(new Test().checkPrototype(), 'test');
-        assert.equal(new Test().checkMixin(), 'test');
-        assert(Test.checkStatic());
+        assert.equal(new Test().checkPrototype(), 'test', 'Should properly create prototype');
+        assert.equal(new Test().checkMixin(), 'test', 'Should properly mixin object to prototype');
+        assert(Test.checkStatic(), 'Should property create static field');
     });
 
     it('Should properly extend from exists class', function () {
@@ -45,7 +46,7 @@ describe('Class', function () {
 
         var Foo = Test.extend();
 
-        assert.equal(new Foo().getTest(), 'test');
+        assert.equal(new Foo().getTest(), 'test', 'Should properly call extended method');
     });
 
     it('Should properly call _super', function () {
@@ -70,7 +71,7 @@ describe('Class', function () {
             }
         });
 
-        assert.equal(new Foo().getTest(), 'test');
-        assert.equal(new Foo().getFoo(), 'bar');
+        assert.equal(new Foo().getTest(), 'test', 'Should properly get value from super class');
+        assert.equal(new Foo().getFoo(), 'bar', 'Should properly get value from sub class');
     });
 });
