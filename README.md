@@ -1,25 +1,28 @@
-JSKlass
-========
+# JSKlass
 
 [![Build Status](https://travis-ci.org/ghaiklor/jsklass.svg?branch=master)](https://travis-ci.org/ghaiklor/jsklass)
 
 *Create classes with prototype object, static properties and mixins in JavaScript.*
 
-Installing from npm
----
+## How to get it?
+
+### Install from npm
 
 ```shell
 npm install jsklass
 ```
 
-Installing from bower
----
+### Install from bower
 
 ```shell
 bower install jsklass
 ```
 
-Using in NodeJS
+## How to use it?
+
+### Use in NodeJS
+
+Include ```jsklass``` module and you can start work with it.
 
 ```javascript
 var Class = require('jsklass');
@@ -28,15 +31,16 @@ var Basic = Class.create();
 var Extended = Basic.extend();
 ```
 
-Download JSClass
----
+### Use in browser
 
-If you want use it in browser then you need download source file.
+JSKlass creates a global variable ```Class``` which you can use.
 
-You can get latest version of JSKlass [here](https://github.com/ghaiklor/jsklass/blob/master/src/Class.js).
+```javascript
+var Basic = Class.create();
+var Extended = Basic.extend();
+```
 
-Getting started
----
+## Getting started
 
 For example, you can create Animal class and extend it with Cat class.
 
@@ -65,20 +69,18 @@ var justCat = new Cat();
 justCat.getType(); // Cat
 ```
 
-API
----
+## API
 
 API has simple method. When you create Class you call `create` method of Class object.
 
-If you want extends then call `extend` in exists class.
+If you want extends then call `extend` in existing class.
 
 ```javascript
 var result = Class.create(prototype, staticProperties, [mixinsArray]);
 result.extend(prototype, staticProperties, [mixinsArray]);
 ```
 
-Examples
----
+## Examples
 
 ### Basic creating and extending
 
