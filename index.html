@@ -1,221 +1,243 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>JSClass by ghaiklor</title>
+    <meta name="description" content="JSClass : Create classes with prototype, static attributes, mixins in JavaScript and extend them">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>JSClass</title>
   </head>
 
   <body>
-    <div id="container">
-      <div class="inner">
 
-        <header>
-          <h1>JSClass</h1>
-          <h2>Create classes with prototype, static attributes, mixins in JavaScript and extend them</h2>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ghaiklor/jsklass">View on GitHub</a>
+
+          <h1 id="project_title">JSClass</h1>
+          <h2 id="project_tagline">Create classes with prototype, static attributes, mixins in JavaScript and extend them</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ghaiklor/jsklass/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ghaiklor/jsklass/tarball/master">Download this project as a tar.gz file</a>
+            </section>
         </header>
+    </div>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/ghaiklor/jsklass/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/ghaiklor/jsklass/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/ghaiklor/jsklass" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="jsklass" class="anchor" href="#jsklass" aria-hidden="true"><span class="octicon octicon-link"></span></a>JSKlass</h1>
 
-        <hr>
-
-        <section id="main_content">
-          <h1>
-<a name="jsklass" class="anchor" href="#jsklass"><span class="octicon octicon-link"></span></a>JSKlass</h1>
+<p><a href="https://travis-ci.org/ghaiklor/jsklass"><img src="https://travis-ci.org/ghaiklor/jsklass.svg?branch=master" alt="Build Status"></a></p>
 
 <p><em>Create classes with prototype object, static properties and mixins in JavaScript.</em></p>
 
 <h2>
-<a name="installing-from-npm" class="anchor" href="#installing-from-npm"><span class="octicon octicon-link"></span></a>Installing from npm</h2>
+<a id="how-to-get-it" class="anchor" href="#how-to-get-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to get it?</h2>
 
-<div class="highlight highlight-shell"><pre>npm install jsklass
-</pre></div>
+<h3>
+<a id="install-from-npm" class="anchor" href="#install-from-npm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install from npm</h3>
 
-<p>Using in NodeJS</p>
+<div class="highlight highlight-shell"><pre>npm install jsklass</pre></div>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">Class</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'jsklass'</span><span class="p">);</span>
+<h3>
+<a id="install-from-bower" class="anchor" href="#install-from-bower" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install from bower</h3>
 
-<span class="kd">var</span> <span class="nx">Basic</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">Extended</span> <span class="o">=</span> <span class="nx">Basic</span><span class="p">.</span><span class="nx">extend</span><span class="p">();</span>
-</pre></div>
-
-<h2>
-<a name="download-jsclass" class="anchor" href="#download-jsclass"><span class="octicon octicon-link"></span></a>Download JSClass</h2>
-
-<p>If you want use it in browser then you need download source file.</p>
-
-<p>You can get latest version of JSKlass <a href="https://github.com/ghaiklor/jsklass/blob/master/src/Class.js">here</a>.</p>
+<div class="highlight highlight-shell"><pre>bower install jsklass</pre></div>
 
 <h2>
-<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting started</h2>
+<a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it?</h2>
+
+<h3>
+<a id="use-in-nodejs" class="anchor" href="#use-in-nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use in NodeJS</h3>
+
+<p>Include <code>jsklass</code> module and you can start work with it.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> Class <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>jsklass<span class="pl-pds">'</span></span>);
+
+<span class="pl-s">var</span> Basic <span class="pl-k">=</span> Class.create();
+<span class="pl-s">var</span> Extended <span class="pl-k">=</span> Basic.extend();</pre></div>
+
+<h3>
+<a id="use-in-browser" class="anchor" href="#use-in-browser" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use in browser</h3>
+
+<p>JSKlass creates a global variable <code>Class</code> which you can use.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> Basic <span class="pl-k">=</span> Class.create();
+<span class="pl-s">var</span> Extended <span class="pl-k">=</span> Basic.extend();</pre></div>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h2>
 
 <p>For example, you can create Animal class and extend it with Cat class.</p>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">Animal</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-    <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"Animal"</span><span class="p">;</span>
-    <span class="p">},</span>
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> Animal <span class="pl-k">=</span> Class.create({
+    <span class="pl-en">init</span>: <span class="pl-st">function</span>() {
+        <span class="pl-v">this</span>.<span class="pl-sc">type</span> <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">"</span>Animal<span class="pl-pds">"</span></span>;
+    },
 
-    <span class="nx">getType</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">});</span>
+    <span class="pl-en">getType</span>: <span class="pl-st">function</span>() {
+        <span class="pl-k">return</span> <span class="pl-v">this</span>.<span class="pl-sc">type</span>;
+    }
+});
 
-<span class="kd">var</span> <span class="nx">Cat</span> <span class="o">=</span> <span class="nx">Animal</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-    <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span> <span class="c1">// You can call super methods</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"Cat"</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">});</span>
+<span class="pl-s">var</span> Cat <span class="pl-k">=</span> Animal.extend({
+    <span class="pl-en">init</span>: <span class="pl-st">function</span>() {
+        <span class="pl-v">this</span>._super(); <span class="pl-c">// You can call super methods</span>
+        <span class="pl-v">this</span>.<span class="pl-sc">type</span> <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">"</span>Cat<span class="pl-pds">"</span></span>;
+    }
+});
 
-<span class="kd">var</span> <span class="nx">justAnimal</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Animal</span><span class="p">();</span>
-<span class="nx">justAnimal</span><span class="p">.</span><span class="nx">getType</span><span class="p">();</span> <span class="c1">// Animal</span>
+<span class="pl-s">var</span> justAnimal <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Animal</span>();
+justAnimal.getType(); <span class="pl-c">// Animal</span>
 
-<span class="kd">var</span> <span class="nx">justCat</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cat</span><span class="p">();</span>
-<span class="nx">justCat</span><span class="p">.</span><span class="nx">getType</span><span class="p">();</span> <span class="c1">// Cat</span>
-</pre></div>
+<span class="pl-s">var</span> justCat <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Cat</span>();
+justCat.getType(); <span class="pl-c">// Cat</span></pre></div>
 
 <h2>
-<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
 
 <p>API has simple method. When you create Class you call <code>create</code> method of Class object.</p>
 
-<p>If you want extends then call <code>extend</code> in exists class.</p>
+<p>If you want extends then call <code>extend</code> in existing class.</p>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">prototype</span><span class="p">,</span> <span class="nx">staticProperties</span><span class="p">,</span> <span class="p">[</span><span class="nx">mixinsArray</span><span class="p">]);</span>
-<span class="nx">result</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">prototype</span><span class="p">,</span> <span class="nx">staticProperties</span><span class="p">,</span> <span class="p">[</span><span class="nx">mixinsArray</span><span class="p">]);</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> result <span class="pl-k">=</span> Class.create(prototype, staticProperties, [mixinsArray]);
+result.extend(prototype, staticProperties, [mixinsArray]);</pre></div>
 
 <h2>
-<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
 
 <h3>
-<a name="basic-creating-and-extending" class="anchor" href="#basic-creating-and-extending"><span class="octicon octicon-link"></span></a>Basic creating and extending</h3>
+<a id="basic-creating-and-extending" class="anchor" href="#basic-creating-and-extending" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic creating and extending</h3>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">BasicClass</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">ExtendedClass</span> <span class="o">=</span> <span class="nx">BasicClass</span><span class="p">.</span><span class="nx">extend</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">MoreExtendedClass</span> <span class="o">=</span> <span class="nx">ExtendedClass</span><span class="p">.</span><span class="nx">extend</span><span class="p">();</span>
-</pre></div>
-
-<h3>
-<a name="creating-classes-with-methods-and-attributes-and-extend-them" class="anchor" href="#creating-classes-with-methods-and-attributes-and-extend-them"><span class="octicon octicon-link"></span></a>Creating classes with methods and attributes and extend them</h3>
-
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">BasicClass</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="s2">"Basic"</span><span class="p">,</span>
-
-    <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="s2">"bar"</span><span class="p">;</span>
-    <span class="p">},</span>
-
-    <span class="nx">getType</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-
-<span class="kd">var</span> <span class="nx">ExtendedClass</span> <span class="o">=</span> <span class="nx">BasicClass</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="s2">"ExtendedClass"</span><span class="p">,</span>
-
-    <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="s2">"foo"</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-
-<span class="kd">var</span> <span class="nx">MoreClass</span> <span class="o">=</span> <span class="nx">BasicClass</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="s2">"MoreClass"</span>
-<span class="p">});</span>
-
-<span class="kd">var</span> <span class="nx">basic</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BasicClass</span><span class="p">();</span>
-<span class="nx">basic</span><span class="p">.</span><span class="nx">getType</span><span class="p">();</span> <span class="c1">// Basic</span>
-<span class="nx">basic</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span> <span class="c1">// bar</span>
-
-<span class="kd">var</span> <span class="nx">extended</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ExtendedClass</span><span class="p">();</span>
-<span class="nx">extended</span><span class="p">.</span><span class="nx">getType</span><span class="p">();</span> <span class="c1">// ExtendedClass</span>
-<span class="nx">extended</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span> <span class="c1">// bar</span>
-<span class="nx">extended</span><span class="p">.</span><span class="nx">bar</span><span class="p">;</span> <span class="c1">// foo</span>
-
-<span class="kd">var</span> <span class="nx">more</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MoreClass</span><span class="p">();</span>
-<span class="nx">more</span><span class="p">.</span><span class="nx">getType</span><span class="p">();</span> <span class="c1">// MoreClass</span>
-<span class="nx">more</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span> <span class="c1">// bar</span>
-<span class="nx">more</span><span class="p">.</span><span class="nx">bar</span><span class="p">;</span> <span class="c1">// undefined</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> BasicClass <span class="pl-k">=</span> Class.create();
+<span class="pl-s">var</span> ExtendedClass <span class="pl-k">=</span> BasicClass.extend();
+<span class="pl-s">var</span> MoreExtendedClass <span class="pl-k">=</span> ExtendedClass.extend();</pre></div>
 
 <h3>
-<a name="creating-classes-with-prototype-and-static-methods" class="anchor" href="#creating-classes-with-prototype-and-static-methods"><span class="octicon octicon-link"></span></a>Creating classes with prototype and static methods</h3>
+<a id="creating-classes-with-methods-and-attributes-and-extend-them" class="anchor" href="#creating-classes-with-methods-and-attributes-and-extend-them" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating classes with methods and attributes and extend them</h3>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">BasicClass</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">({},</span> <span class="p">{</span>
-    <span class="nx">staticFoo</span><span class="o">:</span> <span class="s1">'bar'</span>
-<span class="p">});</span>
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> BasicClass <span class="pl-k">=</span> Class.create({
+    type<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">"</span>Basic<span class="pl-pds">"</span></span>,
 
-<span class="kd">var</span> <span class="nx">ExtendedClass</span> <span class="o">=</span> <span class="nx">BasicClass</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},</span> <span class="p">{</span>
-    <span class="nx">staticBar</span><span class="o">:</span> <span class="s1">'foo'</span>
-<span class="p">});</span>
+    <span class="pl-en">init</span>: <span class="pl-st">function</span>() {
+        <span class="pl-v">this</span>.foo <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">"</span>bar<span class="pl-pds">"</span></span>;
+    },
 
-<span class="nx">BasicClass</span><span class="p">.</span><span class="nx">staticFoo</span><span class="p">;</span> <span class="c1">// bar</span>
-<span class="nx">BasicClass</span><span class="p">.</span><span class="nx">staticBar</span><span class="p">;</span> <span class="c1">// undefined</span>
+    <span class="pl-en">getType</span>: <span class="pl-st">function</span>() {
+        <span class="pl-k">return</span> <span class="pl-v">this</span>.<span class="pl-sc">type</span>;
+    }
+});
 
-<span class="nx">ExtendedClass</span><span class="p">.</span><span class="nx">staticFoo</span><span class="p">;</span> <span class="c1">// bar</span>
-<span class="nx">ExtendedClass</span><span class="p">.</span><span class="nx">staticBar</span><span class="p">;</span> <span class="c1">// foo</span>
-</pre></div>
+<span class="pl-s">var</span> ExtendedClass <span class="pl-k">=</span> BasicClass.extend({
+    type<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">"</span>ExtendedClass<span class="pl-pds">"</span></span>,
+
+    <span class="pl-en">init</span>: <span class="pl-st">function</span>() {
+        <span class="pl-v">this</span>._super();
+        <span class="pl-v">this</span>.bar <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span>;
+    }
+});
+
+<span class="pl-s">var</span> MoreClass <span class="pl-k">=</span> BasicClass.extend({
+    type<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">"</span>MoreClass<span class="pl-pds">"</span></span>
+});
+
+<span class="pl-s">var</span> basic <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">BasicClass</span>();
+basic.getType(); <span class="pl-c">// Basic</span>
+basic.foo; <span class="pl-c">// bar</span>
+
+<span class="pl-s">var</span> extended <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">ExtendedClass</span>();
+extended.getType(); <span class="pl-c">// ExtendedClass</span>
+extended.foo; <span class="pl-c">// bar</span>
+extended.bar; <span class="pl-c">// foo</span>
+
+<span class="pl-s">var</span> more <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MoreClass</span>();
+more.getType(); <span class="pl-c">// MoreClass</span>
+more.foo; <span class="pl-c">// bar</span>
+more.bar; <span class="pl-c">// undefined</span></pre></div>
 
 <h3>
-<a name="creating-classes-with-prototype-static-and-mixins" class="anchor" href="#creating-classes-with-prototype-static-and-mixins"><span class="octicon octicon-link"></span></a>Creating classes with prototype, static and mixins</h3>
+<a id="creating-classes-with-prototype-and-static-methods" class="anchor" href="#creating-classes-with-prototype-and-static-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating classes with prototype and static methods</h3>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">EventEmitterMixin</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">on</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s2">"on"</span><span class="p">;</span>
-    <span class="p">},</span>
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> BasicClass <span class="pl-k">=</span> Class.create({}, {
+    staticFoo<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>bar<span class="pl-pds">'</span></span>
+});
 
-    <span class="nx">off</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s2">"off"</span><span class="p">;</span>
-    <span class="p">},</span>
+<span class="pl-s">var</span> ExtendedClass <span class="pl-k">=</span> BasicClass.extend({}, {
+    staticBar<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span>
+});
 
-    <span class="nx">emit</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s2">"emit"</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+BasicClass.staticFoo; <span class="pl-c">// bar</span>
+BasicClass.staticBar; <span class="pl-c">// undefined</span>
 
-<span class="kd">var</span> <span class="nx">OtherMixin</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">other</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s2">"Other"</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+ExtendedClass.staticFoo; <span class="pl-c">// bar</span>
+ExtendedClass.staticBar; <span class="pl-c">// foo</span></pre></div>
 
-<span class="kd">var</span> <span class="nx">EventEmitter</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">({},</span> <span class="p">{},</span> <span class="p">[</span><span class="nx">EventEmitterMixin</span><span class="p">]);</span>
-<span class="kd">var</span> <span class="nx">EventEmitterAndOther</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">({},</span> <span class="p">{},</span> <span class="p">[</span><span class="nx">EventEmitterMixin</span><span class="p">,</span> <span class="nx">OtherMixin</span><span class="p">]);</span>
+<h3>
+<a id="creating-classes-with-prototype-static-and-mixins" class="anchor" href="#creating-classes-with-prototype-static-and-mixins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating classes with prototype, static and mixins</h3>
 
-<span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="p">();</span>
-<span class="nx">event</span><span class="p">.</span><span class="nx">on</span><span class="p">();</span> <span class="c1">// on</span>
-<span class="nx">event</span><span class="p">.</span><span class="nx">off</span><span class="p">();</span> <span class="c1">// off</span>
-<span class="nx">event</span><span class="p">.</span><span class="nx">emit</span><span class="p">();</span> <span class="c1">// emit</span>
-<span class="nx">event</span><span class="p">.</span><span class="nx">other</span><span class="p">();</span> <span class="c1">// undefined</span>
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> EventEmitterMixin <span class="pl-k">=</span> {
+    <span class="pl-en">on</span>: <span class="pl-st">function</span>() {
+        <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>on<span class="pl-pds">"</span></span>;
+    },
 
-<span class="kd">var</span> <span class="nx">otherEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitterAndOther</span><span class="p">();</span>
-<span class="nx">event</span><span class="p">.</span><span class="nx">on</span><span class="p">();</span> <span class="c1">// on</span>
-<span class="nx">event</span><span class="p">.</span><span class="nx">off</span><span class="p">();</span> <span class="c1">// off</span>
-<span class="nx">event</span><span class="p">.</span><span class="nx">emit</span><span class="p">();</span> <span class="c1">// emit</span>
-<span class="nx">event</span><span class="p">.</span><span class="nx">other</span><span class="p">();</span> <span class="c1">// Other</span>
-</pre></div>
-        </section>
+    <span class="pl-en">off</span>: <span class="pl-st">function</span>() {
+        <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>off<span class="pl-pds">"</span></span>;
+    },
 
-        <footer>
-          JSClass is maintained by <a href="https://github.com/ghaiklor">ghaiklor</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+    <span class="pl-en">emit</span>: <span class="pl-st">function</span>() {
+        <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>emit<span class="pl-pds">"</span></span>;
+    }
+};
 
-        
-      </div>
+<span class="pl-s">var</span> OtherMixin <span class="pl-k">=</span> {
+    <span class="pl-en">other</span>: <span class="pl-st">function</span>() {
+        <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>Other<span class="pl-pds">"</span></span>;
+    }
+}
+
+<span class="pl-s">var</span> EventEmitter <span class="pl-k">=</span> Class.create({}, {}, [EventEmitterMixin]);
+<span class="pl-s">var</span> EventEmitterAndOther <span class="pl-k">=</span> Class.create({}, {}, [EventEmitterMixin, OtherMixin]);
+
+<span class="pl-s">var</span> <span class="pl-s3">event</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EventEmitter</span>();
+<span class="pl-s3">event</span>.on(); <span class="pl-c">// on</span>
+<span class="pl-s3">event</span>.off(); <span class="pl-c">// off</span>
+<span class="pl-s3">event</span>.emit(); <span class="pl-c">// emit</span>
+<span class="pl-s3">event</span>.other(); <span class="pl-c">// undefined</span>
+
+<span class="pl-s">var</span> otherEvent <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EventEmitterAndOther</span>();
+<span class="pl-s3">event</span>.on(); <span class="pl-c">// on</span>
+<span class="pl-s3">event</span>.off(); <span class="pl-c">// off</span>
+<span class="pl-s3">event</span>.emit(); <span class="pl-c">// emit</span>
+<span class="pl-s3">event</span>.other(); <span class="pl-c">// Other</span></pre></div>
+      </section>
     </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">JSClass maintained by <a href="https://github.com/ghaiklor">ghaiklor</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-45808486-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
   </body>
 </html>
