@@ -10,6 +10,13 @@ Installing from npm
 npm install jsklass
 ```
 
+Installing from bower
+---
+
+```shell
+bower install jsklass
+```
+
 Using in NodeJS
 
 ```javascript

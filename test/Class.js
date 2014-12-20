@@ -1,8 +1,11 @@
+var assert = require('assert'),
+    Class = require('./../src');
+
 describe('Class', function () {
     it('Should create basic class', function () {
         var Test = Class.create();
-        Test.extend.should.be.a.function;
-        new Test().should.be.an.instanceof(Test);
+        assert.equal(typeof Test, 'function', 'Should be a function');
+        assert(new Test() instanceof Test, 'Should be an instance of Test');
     });
 
     it('Should create class with prototype, static and mixins', function () {
@@ -24,9 +27,9 @@ describe('Class', function () {
             }
         }]);
 
-        new Test().checkPrototype().should.be.equal('test');
-        new Test().checkMixin().should.be.equal('test');
-        Test.checkStatic().should.be.ok;
+        assert.equal(new Test().checkPrototype(), 'test');
+        assert.equal(new Test().checkMixin(), 'test');
+        assert(Test.checkStatic());
     });
 
     it('Should properly extend from exists class', function () {
@@ -41,7 +44,8 @@ describe('Class', function () {
         });
 
         var Foo = Test.extend();
-        new Foo().getTest().should.be.equal('test');
+
+        assert.equal(new Foo().getTest(), 'test');
     });
 
     it('Should properly call _super', function () {
@@ -66,7 +70,7 @@ describe('Class', function () {
             }
         });
 
-        new Foo().getTest().should.be.equal('test');
-        new Foo().getFoo().should.be.equal('bar');
+        assert.equal(new Foo().getTest(), 'test');
+        assert.equal(new Foo().getFoo(), 'bar');
     });
 });
