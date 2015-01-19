@@ -1,6 +1,4 @@
-# JSKlass
-
-[![Build Status](https://travis-ci.org/ghaiklor/jsklass.svg?branch=master)](https://travis-ci.org/ghaiklor/jsklass)
+# JSKlass [![npm version](https://badge.fury.io/js/jsklass.svg)](http://badge.fury.io/js/jsklass) [![Build Status](https://travis-ci.org/ghaiklor/jsklass.svg?branch=master)](https://travis-ci.org/ghaiklor/jsklass)
 
 *Create classes with prototype object, static properties and mixins in JavaScript.*
 
