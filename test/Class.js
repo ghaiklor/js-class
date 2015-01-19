@@ -48,30 +48,4 @@ describe('Class', function () {
 
         assert.equal(new Foo().getTest(), 'test', 'Should properly call extended method');
     });
-
-    it('Should properly call _super', function () {
-        var Test = Class.create({
-            init: function () {
-                this.test = 'test';
-            },
-
-            getTest: function () {
-                return this.test;
-            }
-        });
-
-        var Foo = Test.extend({
-            init: function () {
-                this._super.init.apply(this, arguments);
-                this.foo = 'bar';
-            },
-
-            getFoo: function () {
-                return this.foo;
-            }
-        });
-
-        assert.equal(new Foo().getTest(), 'test', 'Should properly get value from super class');
-        assert.equal(new Foo().getFoo(), 'bar', 'Should properly get value from sub class');
-    });
 });

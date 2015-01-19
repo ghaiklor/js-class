@@ -49,8 +49,6 @@
         staticProperties = staticProperties || {};
         mixins = mixins || [];
 
-        var self = this;
-
         function Constructor() {
             return this.init && this.init.apply(this, arguments);
         }
@@ -61,12 +59,6 @@
         Object.defineProperties(Constructor, {
             extend: {
                 value: Class.create,
-                enumerable: false,
-                writable: false,
-                configurable: false
-            },
-            _super: {
-                value: self,
                 enumerable: false,
                 writable: false,
                 configurable: false
