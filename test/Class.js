@@ -62,7 +62,7 @@ describe('Class', function () {
 
         var Foo = Test.extend({
             init: function () {
-                this._super();
+                this._super.init.apply(this, arguments);
                 this.foo = 'bar';
             },
 

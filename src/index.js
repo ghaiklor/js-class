@@ -12,51 +12,22 @@
     "use strict";
 
     /**
-     * Copy properties from parent to target object
-     * @param  {Object} source Object from where properties will be copied
-     * @param  {Object} target Object to where properties will copy
-     * @param  {Object} parent Parent object
+     * Extend object
+     * @param {Object} target Target object
+     * @param {Object} source Source object
+     * @returns {Object}
      * @private
      */
-    function copy(source, target, parent) {
-        Object.keys(source).forEach(function (key) {
-            if (
-                typeof source[key] === "function" &&
-                typeof parent[key] === "function" &&
-                /\b_super\b/.test(source[key])
-            ) {
-                target[key] = wrap(source[key], parent[key]);
-            } else {
-                target[key] = source[key];
-            }
-        });
+    function _extend(target, source) {
+        var keys = Object.keys(source);
+
+        for (var i = 0; i < keys.length; i++) {
+            target[keys[i]] = source[keys[i]];
+        }
+
+        return target;
     }
 
-    /**
-     * Wrap method with parent method.
-     * Useful for create this._super() in subclasses.
-     * @param  {Function} method       Method that need to be wrapped
-     * @param  {Function} parentMethod Parent method, in other words - this._super();
-     * @return {Function}              Returns wrapped function
-     * @private
-     */
-    function wrap(method, parentMethod) {
-        return function () {
-            var backup = this._super;
-            this._super = parentMethod;
-
-            try {
-                return method.apply(this, arguments);
-            } finally {
-                this._super = backup;
-            }
-        };
-    }
-
-    /**
-     * Empty function (interface)
-     * @private
-     */
     function Class() {
     }
 
@@ -74,22 +45,38 @@
      * Class.create(prototype, staticProperties, [mixins])
      */
     Class.create = function (prototype, staticProperties, mixins) {
-        prototype = prototype || {};
+        prototype = _extend(this.prototype, prototype || {});
         staticProperties = staticProperties || {};
         mixins = mixins || [];
+
+        var self = this;
 
         function Constructor() {
             return this.init && this.init.apply(this, arguments);
         }
 
-        Constructor.prototype = Object.create(this.prototype);
+        Constructor.prototype = Object.create(prototype);
         Constructor.prototype.constructor = Constructor;
-        Constructor.extend = Class.create;
 
-        copy(staticProperties, Constructor, this);
-        copy(prototype, Constructor.prototype, this.prototype);
+        Object.defineProperties(Constructor, {
+            extend: {
+                value: Class.create,
+                enumerable: false,
+                writable: false,
+                configurable: false
+            },
+            _super: {
+                value: self,
+                enumerable: false,
+                writable: false,
+                configurable: false
+            }
+        });
+
+        _extend(Constructor, staticProperties);
+
         for (var i = mixins.length - 1; i >= 0; i--) {
-            copy(mixins[i], Constructor.prototype, this.prototype);
+            _extend(Constructor.prototype, mixins[i]);
         }
 
         return Constructor;
