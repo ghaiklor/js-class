@@ -1,5 +1,10 @@
-Version 1.1.0
-===
+# Changelog
+
+## Version 1.2.0
+
+- Optimized creating and extending new classes;
+
+## Version 1.1.0
 
 - Integrate with Travis;
 - Add bower integration;
@@ -7,17 +12,14 @@ Version 1.1.0
 - Small project restructuring;
 - Typo fixes in docs;
 
-Version 1.0.2
-===
+## Version 1.0.2
 
 - Add keywords to library;
 
-Version 1.0.1
-===
+## Version 1.0.1
 
 - Typo fixes in docs;
 
-Version 1.0.0
-===
+## Version 1.0.0
 
 - Realize class extending and creating;
