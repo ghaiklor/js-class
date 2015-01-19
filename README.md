@@ -57,7 +57,6 @@ var Animal = Class.create({
 
 var Cat = Animal.extend({
     init: function() {
-        this._super(); // You can call super methods
         this.type = "Cat";
     }
 });
@@ -109,7 +108,6 @@ var ExtendedClass = BasicClass.extend({
     type: "ExtendedClass",
 
     init: function() {
-        this._super();
         this.bar = "foo";
     }
 });

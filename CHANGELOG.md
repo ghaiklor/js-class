@@ -1,8 +1,9 @@
 # Changelog
 
-## Version 1.2.0
+## Version 2.0.0
 
 - Optimized creating and extending new classes;
+- Remove injecting super class;
 
 ## Version 1.1.0
 
