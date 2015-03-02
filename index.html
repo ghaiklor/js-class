@@ -32,9 +32,8 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a id="jsklass" class="anchor" href="#jsklass" aria-hidden="true"><span class="octicon octicon-link"></span></a>JSKlass</h1>
-
-<p><a href="https://travis-ci.org/ghaiklor/jsklass"><img src="https://travis-ci.org/ghaiklor/jsklass.svg?branch=master" alt="Build Status"></a></p>
+<a id="jsklass--" class="anchor" href="#jsklass--" aria-hidden="true"><span class="octicon octicon-link"></span></a>JSKlass <a href="http://badge.fury.io/js/jsklass"><img src="https://badge.fury.io/js/jsklass.svg" alt="npm version"></a> <a href="https://travis-ci.org/ghaiklor/jsklass"><img src="https://travis-ci.org/ghaiklor/jsklass.svg?branch=master" alt="Build Status"></a>
+</h1>
 
 <p><em>Create classes with prototype object, static properties and mixins in JavaScript.</em></p>
 
@@ -89,7 +88,6 @@
 
 <span class="pl-s">var</span> Cat <span class="pl-k">=</span> Animal.extend({
     <span class="pl-en">init</span>: <span class="pl-st">function</span>() {
-        <span class="pl-v">this</span>._super(); <span class="pl-c">// You can call super methods</span>
         <span class="pl-v">this</span>.<span class="pl-sc">type</span> <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">"</span>Cat<span class="pl-pds">"</span></span>;
     }
 });
@@ -139,7 +137,6 @@ result.extend(prototype, staticProperties, [mixinsArray]);</pre></div>
     type<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">"</span>ExtendedClass<span class="pl-pds">"</span></span>,
 
     <span class="pl-en">init</span>: <span class="pl-st">function</span>() {
-        <span class="pl-v">this</span>._super();
         <span class="pl-v">this</span>.bar <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span>;
     }
 });
