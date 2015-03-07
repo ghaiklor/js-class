@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 2.1.0
+
+- Add test coverage;
+
 ## Version 2.0.0
 
 - Optimized creating and extending new classes;

@@ -1,21 +1,20 @@
 {
     "name": "jsklass",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "Create classes with prototype, static attributes, mixins in JavaScript and extend them",
-    "main": "src/index.js",
+    "main": "index.js",
     "keywords": [
-        "klass",
+        "javascript",
         "class",
         "extend",
-        "javascript",
-        "nodejs",
-        "node js"
+        "klass"
     ],
     "directories": {
         "test": "tests"
     },
     "scripts": {
-        "test": "mocha"
+        "test": "node ./node_modules/.bin/istanbul cover --report lcovonly ./node_modules/.bin/_mocha -- --recursive --reporter spec",
+        "prepublish": "npm test"
     },
     "repository": {
         "type": "git",
@@ -28,6 +27,7 @@
     },
     "homepage": "https://github.com/ghaiklor/jsklass",
     "devDependencies": {
+        "istanbul": "^0.3.7",
         "mocha": "^2.0.1"
     }
 }

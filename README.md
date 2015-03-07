@@ -1,19 +1,13 @@
-# JSKlass [![npm version](https://badge.fury.io/js/jsklass.svg)](http://badge.fury.io/js/jsklass) [![Build Status](https://travis-ci.org/ghaiklor/jsklass.svg?branch=master)](https://travis-ci.org/ghaiklor/jsklass)
+# JSKlass
+
+![Build Status](https://img.shields.io/travis/ghaiklor/jsklass.svg) ![Coverage](https://img.shields.io/coveralls/ghaiklor/jsklass.svg) ![Downloads](https://img.shields.io/npm/dm/jsklass.svg) ![npm version](https://img.shields.io/npm/v/jsklass.svg) ![dependencies](https://img.shields.io/david/ghaiklor/jsklass.svg) ![dev dependencies](https://img.shields.io/david/dev/ghaiklor/jsklass.svg) ![License](https://img.shields.io/npm/l/jsklass.svg)
 
 *Create classes with prototype object, static properties and mixins in JavaScript.*
 
 ## How to get it?
 
-### Install from npm
-
 ```shell
 npm install jsklass
-```
-
-### Install from bower
-
-```shell
-bower install jsklass
 ```
 
 ## How to use it?
@@ -25,15 +19,6 @@ Include ```jsklass``` module and you can start work with it.
 ```javascript
 var Class = require('jsklass');
 
-var Basic = Class.create();
-var Extended = Basic.extend();
-```
-
-### Use in browser
-
-JSKlass creates a global variable ```Class``` which you can use.
-
-```javascript
 var Basic = Class.create();
 var Extended = Basic.extend();
 ```
@@ -78,6 +63,8 @@ result.extend(prototype, staticProperties, [mixinsArray]);
 ```
 
 ## Examples
+
+Working example you can find [here](./examples).
 
 ### Basic creating and extending
 

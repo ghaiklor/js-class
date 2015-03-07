@@ -1,5 +1,5 @@
 var assert = require('assert'),
-    Class = require('./../src');
+    Class = require('../');
 
 describe('Class', function () {
     it('Should create basic class', function () {
