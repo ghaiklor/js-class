@@ -2,19 +2,17 @@
 
 ![Build Status](https://img.shields.io/travis/ghaiklor/jsklass.svg) ![Coverage](https://img.shields.io/coveralls/ghaiklor/jsklass.svg) ![Downloads](https://img.shields.io/npm/dm/jsklass.svg) ![npm version](https://img.shields.io/npm/v/jsklass.svg) ![dependencies](https://img.shields.io/david/ghaiklor/jsklass.svg) ![dev dependencies](https://img.shields.io/david/dev/ghaiklor/jsklass.svg) ![License](https://img.shields.io/npm/l/jsklass.svg)
 
-*Create classes with prototype object, static properties and mixins in JavaScript.*
+Create classes with prototype object, static properties and mixins in JavaScript.
 
-## How to get it?
+## Getting Started
+
+Install `jsklass` module.
 
 ```shell
 npm install jsklass
 ```
 
-## How to use it?
-
-### Use in NodeJS
-
-Include ```jsklass``` module and you can start work with it.
+Include ```jsklass``` and you can start work with it.
 
 ```javascript
 var Class = require('jsklass');
@@ -22,8 +20,6 @@ var Class = require('jsklass');
 var Basic = Class.create();
 var Extended = Basic.extend();
 ```
-
-## Getting started
 
 For example, you can create Animal class and extend it with Cat class.
 
@@ -69,9 +65,9 @@ Working example you can find [here](./examples).
 ### Basic creating and extending
 
 ```javascript
-var BasicClass = Class.create();
-var ExtendedClass = BasicClass.extend();
-var MoreExtendedClass = ExtendedClass.extend();
+var BasicClass = Class.create(); // BasicClass -> Object
+var ExtendedClass = BasicClass.extend(); // ExtendedClass -> BasicClass -> Object
+var MoreExtendedClass = ExtendedClass.extend(); // MoreExtendedClass -> ExtendedClass -> BasicClass -> Object
 ```
 
 ### Creating classes with methods and attributes and extend them
@@ -80,11 +76,11 @@ var MoreExtendedClass = ExtendedClass.extend();
 var BasicClass = Class.create({
     type: "Basic",
 
-    init: function() {
+    init: function () {
         this.foo = "bar";
     },
 
-    getType: function() {
+    getType: function () {
         return this.type;
     }
 });
@@ -92,7 +88,7 @@ var BasicClass = Class.create({
 var ExtendedClass = BasicClass.extend({
     type: "ExtendedClass",
 
-    init: function() {
+    init: function () {
         this.bar = "foo";
     }
 });
@@ -102,18 +98,18 @@ var MoreClass = BasicClass.extend({
 });
 
 var basic = new BasicClass();
-basic.getType(); // Basic
-basic.foo; // bar
+console.log(basic.getType()); // Basic
+console.log(basic.foo); // bar
 
 var extended = new ExtendedClass();
-extended.getType(); // ExtendedClass
-extended.foo; // bar
-extended.bar; // foo
+console.log(extended.getType()); // ExtendedClass
+console.log(extended.foo); // bar
+console.log(extended.bar); // foo
 
 var more = new MoreClass();
-more.getType(); // MoreClass
-more.foo; // bar
-more.bar; // undefined
+console.log(more.getType()); // MoreClass
+console.log(more.foo); // bar
+console.log(more.bar); // undefined
 ```
 
 ### Creating classes with prototype and static methods
@@ -127,48 +123,74 @@ var ExtendedClass = BasicClass.extend({}, {
     staticBar: 'foo'
 });
 
-BasicClass.staticFoo; // bar
-BasicClass.staticBar; // undefined
+console.log(BasicClass.staticFoo); // bar
+console.log(BasicClass.staticBar); // undefined
 
-ExtendedClass.staticFoo; // bar
-ExtendedClass.staticBar; // foo
+console.log(ExtendedClass.staticFoo); // bar
+console.log(ExtendedClass.staticBar); // foo
 ```
 
 ### Creating classes with prototype, static and mixins
 
 ```javascript
+var Class = require('../');
+
 var EventEmitterMixin = {
-    on: function() {
+    on: function () {
         return "on";
     },
 
-    off: function() {
+    off: function () {
         return "off";
     },
 
-    emit: function() {
+    emit: function () {
         return "emit";
     }
 };
 
 var OtherMixin = {
-    other: function() {
+    other: function () {
         return "Other";
     }
-}
+};
 
 var EventEmitter = Class.create({}, {}, [EventEmitterMixin]);
 var EventEmitterAndOther = Class.create({}, {}, [EventEmitterMixin, OtherMixin]);
 
 var event = new EventEmitter();
-event.on(); // on
-event.off(); // off
-event.emit(); // emit
-event.other(); // undefined
+console.log(event.on()); // on
+console.log(event.off()); // off
+console.log(event.emit()); // emit
+console.log(event.other()); // undefined
 
 var otherEvent = new EventEmitterAndOther();
-event.on(); // on
-event.off(); // off
-event.emit(); // emit
-event.other(); // Other
+console.log(otherEvent.on()); // on
+console.log(otherEvent.off()); // off
+console.log(otherEvent.emit()); // emit
+console.log(otherEvent.other()); // Other
 ```
+
+## License
+
+The MIT License (MIT)
+
+Copyright © 2015 Eugene Obrezkov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
