@@ -10,17 +10,17 @@
         "klass"
     ],
     "directories": {
-        "test": "tests"
+        "test": "test"
     },
     "scripts": {
-        "test": "node ./node_modules/.bin/istanbul cover --report lcovonly ./node_modules/.bin/_mocha -- --recursive --reporter spec",
+        "test": "node ./node_modules/.bin/istanbul cover --report lcovonly ./node_modules/.bin/_mocha",
         "prepublish": "npm test"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/ghaiklor/jsklass.git"
     },
-    "author": "Eugene Obrezkov",
+    "author": "ghaiklor",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/ghaiklor/jsklass/issues"
