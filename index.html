@@ -1,78 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="JSKlass : Create classes with prototype, static attributes, mixins in JavaScript and extend them">
+    <title>JSKlass by ghaiklor</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>JSKlass</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">JSKlass</h1>
+        <p class="header">Create classes with prototype, static attributes, mixins in JavaScript and extend them</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ghaiklor/jsklass">View on GitHub</a>
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/ghaiklor/jsklass/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/ghaiklor/jsklass/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/ghaiklor/jsklass">View On GitHub</a></li>
+        </ul>
 
-          <h1 id="project_title">JSKlass</h1>
-          <h2 id="project_tagline">Create classes with prototype, static attributes, mixins in JavaScript and extend them</h2>
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/ghaiklor">ghaiklor</a></p>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ghaiklor/jsklass/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ghaiklor/jsklass/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+      </header>
+      <section>
         <h1>
-<a id="jsklass--" class="anchor" href="#jsklass--" aria-hidden="true"><span class="octicon octicon-link"></span></a>JSKlass <a href="http://badge.fury.io/js/jsklass"><img src="https://badge.fury.io/js/jsklass.svg" alt="npm version"></a> <a href="https://travis-ci.org/ghaiklor/jsklass"><img src="https://travis-ci.org/ghaiklor/jsklass.svg?branch=master" alt="Build Status"></a>
-</h1>
+<a id="jsklass" class="anchor" href="#jsklass" aria-hidden="true"><span class="octicon octicon-link"></span></a>JSKlass</h1>
 
-<p><em>Create classes with prototype object, static properties and mixins in JavaScript.</em></p>
+<p><img src="https://img.shields.io/travis/ghaiklor/jsklass.svg" alt="Build Status"> <img src="https://img.shields.io/coveralls/ghaiklor/jsklass.svg" alt="Coverage"> <img src="https://img.shields.io/npm/dm/jsklass.svg" alt="Downloads"> <img src="https://img.shields.io/npm/v/jsklass.svg" alt="npm version"> <img src="https://img.shields.io/david/ghaiklor/jsklass.svg" alt="dependencies"> <img src="https://img.shields.io/david/dev/ghaiklor/jsklass.svg" alt="dev dependencies"> <img src="https://img.shields.io/npm/l/jsklass.svg" alt="License"></p>
+
+<p>Create classes with prototype object, static properties and mixins in JavaScript.</p>
 
 <h2>
-<a id="how-to-get-it" class="anchor" href="#how-to-get-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to get it?</h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
 
-<h3>
-<a id="install-from-npm" class="anchor" href="#install-from-npm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install from npm</h3>
+<p>Install <code>jsklass</code> module.</p>
 
 <div class="highlight highlight-shell"><pre>npm install jsklass</pre></div>
 
-<h3>
-<a id="install-from-bower" class="anchor" href="#install-from-bower" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install from bower</h3>
-
-<div class="highlight highlight-shell"><pre>bower install jsklass</pre></div>
-
-<h2>
-<a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it?</h2>
-
-<h3>
-<a id="use-in-nodejs" class="anchor" href="#use-in-nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use in NodeJS</h3>
-
-<p>Include <code>jsklass</code> module and you can start work with it.</p>
+<p>Include <code>jsklass</code> and you can start work with it.</p>
 
 <div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> Class <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>jsklass<span class="pl-pds">'</span></span>);
 
 <span class="pl-s">var</span> Basic <span class="pl-k">=</span> Class.create();
 <span class="pl-s">var</span> Extended <span class="pl-k">=</span> Basic.extend();</pre></div>
-
-<h3>
-<a id="use-in-browser" class="anchor" href="#use-in-browser" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use in browser</h3>
-
-<p>JSKlass creates a global variable <code>Class</code> which you can use.</p>
-
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> Basic <span class="pl-k">=</span> Class.create();
-<span class="pl-s">var</span> Extended <span class="pl-k">=</span> Basic.extend();</pre></div>
-
-<h2>
-<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h2>
 
 <p>For example, you can create Animal class and extend it with Cat class.</p>
 
@@ -111,24 +88,28 @@ result.extend(prototype, staticProperties, [mixinsArray]);</pre></div>
 <h2>
 <a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
 
+<p>Working example you can find <a href="./examples">here</a>.</p>
+
 <h3>
 <a id="basic-creating-and-extending" class="anchor" href="#basic-creating-and-extending" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic creating and extending</h3>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> BasicClass <span class="pl-k">=</span> Class.create();
-<span class="pl-s">var</span> ExtendedClass <span class="pl-k">=</span> BasicClass.extend();
-<span class="pl-s">var</span> MoreExtendedClass <span class="pl-k">=</span> ExtendedClass.extend();</pre></div>
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> BasicClass <span class="pl-k">=</span> Class.create(); <span class="pl-c">// BasicClass -&gt; Object</span>
+<span class="pl-s">var</span> ExtendedClass <span class="pl-k">=</span> BasicClass.extend(); <span class="pl-c">// ExtendedClass -&gt; BasicClass -&gt; Object</span>
+<span class="pl-s">var</span> MoreExtendedClass <span class="pl-k">=</span> ExtendedClass.extend(); <span class="pl-c">// MoreExtendedClass -&gt; ExtendedClass -&gt; BasicClass -&gt; Object</span></pre></div>
 
 <h3>
 <a id="creating-classes-with-methods-and-attributes-and-extend-them" class="anchor" href="#creating-classes-with-methods-and-attributes-and-extend-them" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating classes with methods and attributes and extend them</h3>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> BasicClass <span class="pl-k">=</span> Class.create({
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> Class <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>../<span class="pl-pds">'</span></span>);
+
+<span class="pl-s">var</span> BasicClass <span class="pl-k">=</span> Class.create({
     type<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">"</span>Basic<span class="pl-pds">"</span></span>,
 
-    <span class="pl-en">init</span>: <span class="pl-st">function</span>() {
+    <span class="pl-en">init</span>: <span class="pl-st">function</span> () {
         <span class="pl-v">this</span>.foo <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">"</span>bar<span class="pl-pds">"</span></span>;
     },
 
-    <span class="pl-en">getType</span>: <span class="pl-st">function</span>() {
+    <span class="pl-en">getType</span>: <span class="pl-st">function</span> () {
         <span class="pl-k">return</span> <span class="pl-v">this</span>.<span class="pl-sc">type</span>;
     }
 });
@@ -136,7 +117,7 @@ result.extend(prototype, staticProperties, [mixinsArray]);</pre></div>
 <span class="pl-s">var</span> ExtendedClass <span class="pl-k">=</span> BasicClass.extend({
     type<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">"</span>ExtendedClass<span class="pl-pds">"</span></span>,
 
-    <span class="pl-en">init</span>: <span class="pl-st">function</span>() {
+    <span class="pl-en">init</span>: <span class="pl-st">function</span> () {
         <span class="pl-v">this</span>.bar <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span>;
     }
 });
@@ -146,18 +127,18 @@ result.extend(prototype, staticProperties, [mixinsArray]);</pre></div>
 });
 
 <span class="pl-s">var</span> basic <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">BasicClass</span>();
-basic.getType(); <span class="pl-c">// Basic</span>
-basic.foo; <span class="pl-c">// bar</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(basic.getType()); <span class="pl-c">// Basic</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(basic.foo); <span class="pl-c">// bar</span>
 
 <span class="pl-s">var</span> extended <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">ExtendedClass</span>();
-extended.getType(); <span class="pl-c">// ExtendedClass</span>
-extended.foo; <span class="pl-c">// bar</span>
-extended.bar; <span class="pl-c">// foo</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(extended.getType()); <span class="pl-c">// ExtendedClass</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(extended.foo); <span class="pl-c">// undefined</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(extended.bar); <span class="pl-c">// foo</span>
 
 <span class="pl-s">var</span> more <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MoreClass</span>();
-more.getType(); <span class="pl-c">// MoreClass</span>
-more.foo; <span class="pl-c">// bar</span>
-more.bar; <span class="pl-c">// undefined</span></pre></div>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(more.getType()); <span class="pl-c">// MoreClass</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(more.foo); <span class="pl-c">// bar</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(more.bar); <span class="pl-c">// undefined</span></pre></div>
 
 <h3>
 <a id="creating-classes-with-prototype-and-static-methods" class="anchor" href="#creating-classes-with-prototype-and-static-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating classes with prototype and static methods</h3>
@@ -170,61 +151,83 @@ more.bar; <span class="pl-c">// undefined</span></pre></div>
     staticBar<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span>
 });
 
-BasicClass.staticFoo; <span class="pl-c">// bar</span>
-BasicClass.staticBar; <span class="pl-c">// undefined</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(BasicClass.staticFoo); <span class="pl-c">// bar</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(BasicClass.staticBar); <span class="pl-c">// undefined</span>
 
-ExtendedClass.staticFoo; <span class="pl-c">// bar</span>
-ExtendedClass.staticBar; <span class="pl-c">// foo</span></pre></div>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(ExtendedClass.staticFoo); <span class="pl-c">// undefined</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(ExtendedClass.staticBar); <span class="pl-c">// foo</span></pre></div>
 
 <h3>
 <a id="creating-classes-with-prototype-static-and-mixins" class="anchor" href="#creating-classes-with-prototype-static-and-mixins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating classes with prototype, static and mixins</h3>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> EventEmitterMixin <span class="pl-k">=</span> {
-    <span class="pl-en">on</span>: <span class="pl-st">function</span>() {
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> Class <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>../<span class="pl-pds">'</span></span>);
+
+<span class="pl-s">var</span> EventEmitterMixin <span class="pl-k">=</span> {
+    <span class="pl-en">on</span>: <span class="pl-st">function</span> () {
         <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>on<span class="pl-pds">"</span></span>;
     },
 
-    <span class="pl-en">off</span>: <span class="pl-st">function</span>() {
+    <span class="pl-en">off</span>: <span class="pl-st">function</span> () {
         <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>off<span class="pl-pds">"</span></span>;
     },
 
-    <span class="pl-en">emit</span>: <span class="pl-st">function</span>() {
+    <span class="pl-en">emit</span>: <span class="pl-st">function</span> () {
         <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>emit<span class="pl-pds">"</span></span>;
     }
 };
 
 <span class="pl-s">var</span> OtherMixin <span class="pl-k">=</span> {
-    <span class="pl-en">other</span>: <span class="pl-st">function</span>() {
+    <span class="pl-en">other</span>: <span class="pl-st">function</span> () {
         <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>Other<span class="pl-pds">"</span></span>;
     }
-}
+};
 
 <span class="pl-s">var</span> EventEmitter <span class="pl-k">=</span> Class.create({}, {}, [EventEmitterMixin]);
 <span class="pl-s">var</span> EventEmitterAndOther <span class="pl-k">=</span> Class.create({}, {}, [EventEmitterMixin, OtherMixin]);
 
 <span class="pl-s">var</span> <span class="pl-s3">event</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EventEmitter</span>();
-<span class="pl-s3">event</span>.on(); <span class="pl-c">// on</span>
-<span class="pl-s3">event</span>.off(); <span class="pl-c">// off</span>
-<span class="pl-s3">event</span>.emit(); <span class="pl-c">// emit</span>
-<span class="pl-s3">event</span>.other(); <span class="pl-c">// undefined</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s3">event</span>.on()); <span class="pl-c">// on</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s3">event</span>.off()); <span class="pl-c">// off</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s3">event</span>.emit()); <span class="pl-c">// emit</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s3">event</span>.other); <span class="pl-c">// undefined</span>
 
 <span class="pl-s">var</span> otherEvent <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EventEmitterAndOther</span>();
-<span class="pl-s3">event</span>.on(); <span class="pl-c">// on</span>
-<span class="pl-s3">event</span>.off(); <span class="pl-c">// off</span>
-<span class="pl-s3">event</span>.emit(); <span class="pl-c">// emit</span>
-<span class="pl-s3">event</span>.other(); <span class="pl-c">// Other</span></pre></div>
-      </section>
-    </div>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(otherEvent.on()); <span class="pl-c">// on</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(otherEvent.off()); <span class="pl-c">// off</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(otherEvent.emit()); <span class="pl-c">// emit</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(otherEvent.other()); <span class="pl-c">// Other</span></pre></div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">JSKlass maintained by <a href="https://github.com/ghaiklor">ghaiklor</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright © 2015 Eugene Obrezkov</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
-
-              <script type="text/javascript">
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		          <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -234,7 +237,6 @@ ExtendedClass.staticBar; <span class="pl-c">// foo</span></pre></div>
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-
 
   </body>
 </html>
