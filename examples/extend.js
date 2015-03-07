@@ -30,7 +30,7 @@ console.log(basic.foo); // bar
 
 var extended = new ExtendedClass();
 console.log(extended.getType()); // ExtendedClass
-console.log(extended.foo); // bar
+console.log(extended.foo); // undefined
 console.log(extended.bar); // foo
 
 var more = new MoreClass();

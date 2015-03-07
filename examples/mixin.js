@@ -27,7 +27,7 @@ var event = new EventEmitter();
 console.log(event.on()); // on
 console.log(event.off()); // off
 console.log(event.emit()); // emit
-console.log(event.other()); // undefined
+console.log(event.other); // undefined
 
 var otherEvent = new EventEmitterAndOther();
 console.log(otherEvent.on()); // on

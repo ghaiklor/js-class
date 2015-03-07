@@ -2,6 +2,7 @@
 
 ## Version 2.1.0
 
+- Fix critical bug with changing base classes on extend;
 - Add test coverage;
 
 ## Version 2.0.0

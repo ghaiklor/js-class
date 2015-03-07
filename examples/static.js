@@ -11,5 +11,5 @@ var ExtendedClass = BasicClass.extend({}, {
 console.log(BasicClass.staticFoo); // bar
 console.log(BasicClass.staticBar); // undefined
 
-console.log(ExtendedClass.staticFoo); // bar
+console.log(ExtendedClass.staticFoo); // undefined
 console.log(ExtendedClass.staticBar); // foo

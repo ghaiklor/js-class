@@ -73,6 +73,8 @@ var MoreExtendedClass = ExtendedClass.extend(); // MoreExtendedClass -> Extended
 ### Creating classes with methods and attributes and extend them
 
 ```javascript
+var Class = require('../');
+
 var BasicClass = Class.create({
     type: "Basic",
 
@@ -103,7 +105,7 @@ console.log(basic.foo); // bar
 
 var extended = new ExtendedClass();
 console.log(extended.getType()); // ExtendedClass
-console.log(extended.foo); // bar
+console.log(extended.foo); // undefined
 console.log(extended.bar); // foo
 
 var more = new MoreClass();
@@ -126,7 +128,7 @@ var ExtendedClass = BasicClass.extend({}, {
 console.log(BasicClass.staticFoo); // bar
 console.log(BasicClass.staticBar); // undefined
 
-console.log(ExtendedClass.staticFoo); // bar
+console.log(ExtendedClass.staticFoo); // undefined
 console.log(ExtendedClass.staticBar); // foo
 ```
 
@@ -162,7 +164,7 @@ var event = new EventEmitter();
 console.log(event.on()); // on
 console.log(event.off()); // off
 console.log(event.emit()); // emit
-console.log(event.other()); // undefined
+console.log(event.other); // undefined
 
 var otherEvent = new EventEmitterAndOther();
 console.log(otherEvent.on()); // on
