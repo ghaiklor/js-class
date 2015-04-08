@@ -1,23 +1,23 @@
 var Class = require('../');
 
 var EventEmitterMixin = {
-    on: function () {
-        return "on";
-    },
+  on: function () {
+    return "on";
+  },
 
-    off: function () {
-        return "off";
-    },
+  off: function () {
+    return "off";
+  },
 
-    emit: function () {
-        return "emit";
-    }
+  emit: function () {
+    return "emit";
+  }
 };
 
 var OtherMixin = {
-    other: function () {
-        return "Other";
-    }
+  other: function () {
+    return "Other";
+  }
 };
 
 var EventEmitter = Class.create({}, {}, [EventEmitterMixin]);

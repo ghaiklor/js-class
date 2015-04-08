@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 2.2.0
+
+- Just styling of code;
+
 ## Version 2.1.0
 
 - Fix critical bug with changing base classes on extend;

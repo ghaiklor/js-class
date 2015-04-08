@@ -1,27 +1,27 @@
 var Class = require('../');
 
 var BasicClass = Class.create({
-    type: "Basic",
+  type: "Basic",
 
-    init: function () {
-        this.foo = "bar";
-    },
+  init: function () {
+    this.foo = "bar";
+  },
 
-    getType: function () {
-        return this.type;
-    }
+  getType: function () {
+    return this.type;
+  }
 });
 
 var ExtendedClass = BasicClass.extend({
-    type: "ExtendedClass",
+  type: "ExtendedClass",
 
-    init: function () {
-        this.bar = "foo";
-    }
+  init: function () {
+    this.bar = "foo";
+  }
 });
 
 var MoreClass = BasicClass.extend({
-    type: "MoreClass"
+  type: "MoreClass"
 });
 
 var basic = new BasicClass();

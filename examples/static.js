@@ -1,11 +1,11 @@
 var Class = require('../');
 
 var BasicClass = Class.create({}, {
-    staticFoo: 'bar'
+  staticFoo: 'bar'
 });
 
 var ExtendedClass = BasicClass.extend({}, {
-    staticBar: 'foo'
+  staticBar: 'foo'
 });
 
 console.log(BasicClass.staticFoo); // bar
